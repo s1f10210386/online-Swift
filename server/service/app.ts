@@ -15,5 +15,13 @@ export const init = (serverFactory?: FastifyServerFactory) => {
 
   app.get("/testtest", async () => ({ helloWorld: "testtest" }));
 
+  app.get("/path", async (request, reply) => {
+    const { message } = request.query as { message: string };
+    console.log(message); // "Hello Fastify" がコンソールに表示される
+
+    // 応答メッセージを返す
+    return { reply: `Received message: ${message}` };
+  });
+
   return app;
 };

@@ -14,6 +14,7 @@
 		2AD9864A2B4B675700E3CE9B /* clientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD986492B4B675700E3CE9B /* clientTests.swift */; };
 		2AD986542B4B675700E3CE9B /* clientUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD986532B4B675700E3CE9B /* clientUITests.swift */; };
 		2AD986562B4B675700E3CE9B /* clientUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD986552B4B675700E3CE9B /* clientUITestsLaunchTests.swift */; };
+		2AD986632B4B6B4000E3CE9B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD986622B4B6B4000E3CE9B /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		2AD9864F2B4B675700E3CE9B /* clientUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = clientUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AD986532B4B675700E3CE9B /* clientUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clientUITests.swift; sourceTree = "<group>"; };
 		2AD986552B4B675700E3CE9B /* clientUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clientUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2AD986622B4B6B4000E3CE9B /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				2AD9863A2B4B675500E3CE9B /* ContentView.swift */,
 				2AD9863C2B4B675700E3CE9B /* Assets.xcassets */,
 				2AD9863E2B4B675700E3CE9B /* Preview Content */,
+				2AD986622B4B6B4000E3CE9B /* NetworkManager.swift */,
 			);
 			path = client;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AD986632B4B6B4000E3CE9B /* NetworkManager.swift in Sources */,
 				2AD9863B2B4B675500E3CE9B /* ContentView.swift in Sources */,
 				2AD986392B4B675500E3CE9B /* clientApp.swift in Sources */,
 			);

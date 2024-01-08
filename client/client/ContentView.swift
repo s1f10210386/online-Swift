@@ -14,6 +14,16 @@ struct ContentView: View {
                 .imageScale(.large)
                 .foregroundStyle(.tint)
             Text("Hello, world!")
+            Button("Send Request to Fastify") {
+                        sendRequest { result in
+                            switch result {
+                            case .success(let response):
+                                print("Response: \(response)")
+                            case .failure(let error):
+                                print("Error: \(error)")
+                            }
+                        }
+                    }
         }
         .padding()
     }
