@@ -7,6 +7,7 @@
 
 import Foundation
 
+///pathにGETリクエスト送る(クエリパラメータつけて)
 func sendRequest(completion: @escaping (Result<String, Error>) -> Void) {
     if var urlComponents = URLComponents(string: "http://localhost:31577/path") {
         urlComponents.queryItems = [
@@ -32,3 +33,23 @@ func sendRequest(completion: @escaping (Result<String, Error>) -> Void) {
     }
 }
 
+func sendTextToServer(_ text: String, completion: @escaping (String) -> Void) {
+    guard let url = URL(string: "http://localhost:31577/post") else { return }
+
+    var request = URLRequest(url: url)
+    request.httpMethod = "POST"
+    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+
+    let body: [String: String] = ["text": text]
+    request.httpBody = try? JSONSerialization.data(withJSONObject: body)
+
+    URLSession.shared.dataTask(with: request) { data, response, error in
+        guard let data = data, error == nil else { return }
+
+        if let responseText = String(data: data, encoding: .utf8) {
+            DispatchQueue.main.async {
+                completion(responseText)
+            }
+        }
+    }.resume()
+}

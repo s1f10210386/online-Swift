@@ -23,5 +23,20 @@ export const init = (serverFactory?: FastifyServerFactory) => {
     return { reply: `Received message: ${message}` };
   });
 
+  app.post("/post", async (request, reply) => {
+    const { text } = request.body as { text: string };
+    console.log(text); // コンソールに表示
+
+    const responseText = `response: ${text} 届きました`;
+    return responseText;
+  });
+
+  app.listen({ port: 31577 }, (err, address) => {
+    if (err) {
+      console.error(err);
+      process.exit(1);
+    }
+    console.log(`Server listening at ${address}`);
+  });
   return app;
 };
